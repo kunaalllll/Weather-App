@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const WeatherCard = ({ tempInfo }) => {
-  const { weatherState, setWeatherState } = useState("");
+  const [weatherState, setWeatherState] = useState("");
 
   const {
     temp,
@@ -35,7 +35,7 @@ const WeatherCard = ({ tempInfo }) => {
           break;
       }
     }
-  }, [weathermood]);
+  }, [weathermood, setWeatherState]);
 
   // converting sunset data into time
 
