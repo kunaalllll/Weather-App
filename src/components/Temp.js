@@ -3,11 +3,11 @@ import WeatherCard from "./WeatherCard";
 import "./style.css";
 const Temp = () => {
   const [searchValue, setsearchValue] = useState("Jodhpur");
-  const [tempInfo, setTempInfo] = useState("");
+  const [tempInfo, setTempInfo] = useState({});
 
   const getWeatherInfo = async () => {
     try {
-      let url = `git `;
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=86327b955e72700f364d4201872b5119`;
 
       let res = await fetch(url);
       let data = await res.json();
@@ -37,7 +37,7 @@ const Temp = () => {
 
   useEffect(() => {
     getWeatherInfo();
-  }, [getWeatherInfo]);
+  }, []);
 
   return (
     <>
